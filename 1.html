@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我们的小回忆</title>
+    <style>
+        body {
+            margin: 0;
+            background-image: url("满天星图片.jpg"); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+        .memory-card {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .memory-img {
+            width: 100%;
+            max-width: 300px;
+            display: block;
+            margin: 0 auto 20px;
+            border-radius: 8px;
+        }
+        p {
+            font-size: 22px;
+            color: #000000;
+            line-height: 1.8;
+            text-align: center;
+            margin: 10px 0;
+        }
+        .highlight {
+            color: #ff0000; 
+            font-weight: bold;
+        }
+        
+        .music-btn {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: rgba(101, 191, 255, 0.8);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .music-btn:hover {
+            background-color: rgba(255, 0, 0, 1);
+        }
+    </style>
+</head>
+<body>
+    
+    <audio id="memoryMusic" src="王木木 - 心似烟火 (我看着你背影想开口)_SQ.kgm.mp3" loop>
+        您的浏览器不支持音频播放，请更新浏览器。
+    </audio>
+    
+    <button class="music-btn" onclick="toggleMusic()">播放音乐</button>
+
+    <div class="memory-card">
+        <img src="我们的回忆.jpg" alt="我们的回忆" class="memory-img" style="width: 150px">
+        <p>还记得这个吗？以前你总说它很<span class="highlight">重要</span>。</p>
+        <p>今天路过咱们去过的地方，想起你的模样，想起那时你灿烂的笑容</p>
+        <p>其实我一直没怪你提分手，反而有点心疼。我知道你还没放下前男友，我也知道不敢见我的不安——这些都不是你的问题，反而让我觉得你很真诚。</p>
+        <p>我不会逼你立刻做选择，也不想催你忘记过去。只是想告诉你，在我眼里，你不用刻意完美，哪怕是偶尔紧张的小表情，都特别可爱。</p>
+        <p>如果某天你整理好了心情，愿意再和我聊聊，或者只是再去一次那家咖啡店，我都在。我等的不是答案，是你愿意再相信我的那一天。</p>
+    </div>
+
+    
+    <script>
+        function toggleMusic() {
+            const music = document.getElementById("memoryMusic");
+            const btn = document.querySelector(".music-btn");
+        
+            if (music.paused) {
+                music.play();
+                btn.textContent = "暂停音乐";
+            } else {
+                music.pause();
+                btn.textContent = "播放音乐";
+            }
+        }
+    </script>
+</body>
+</html>
